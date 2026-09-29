@@ -969,15 +969,15 @@ function AmbientDust() {
             <Image src="/top-floral.png" alt="texture" fill className="object-cover grayscale" />
           </div>
 
-          <div className="flex flex-col items-center justify-center w-full max-w-[500px] px-6 relative z-10">
+          <div className="flex flex-col items-center justify-center w-full max-w-[500px] px-4 relative z-10">
             
             <p className="text-[#B38B4D] text-[11px] sm:text-[12px] uppercase tracking-[0.6em] font-bold mb-6 text-center drop-shadow-sm">
-              Specially Invited
+              Invited By
             </p>
             
-            {/* Massive, crisp text in Cream/White for maximum contrast */}
-            <h2 className={`${alexBrush.className} text-[75px] sm:text-[100px] text-[#FCFAF8] text-center leading-[1.1] drop-shadow-[0_4px_15px_rgba(0,0,0,0.4)] px-2`}>
-              {guest.name}
+            {/* Massive, crisp text in Cream/White for maximum contrast (Using Footer Font) */}
+            <h2 className={`${greatVibes.className} text-[60px] sm:text-[90px] text-[#FCFAF8] text-center leading-[1] drop-shadow-[0_4px_15px_rgba(0,0,0,0.4)] px-2 whitespace-nowrap`}>
+              Abdeali & Sarrah
             </h2>
             
             {/* Elegant luxury double-line divider with a center diamond */}
