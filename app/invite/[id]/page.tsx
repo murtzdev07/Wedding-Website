@@ -825,7 +825,7 @@ function AmbientDust() {
           @media screen and (max-width: 380px) {
             .inner-envelope { border-radius: 175px 175px 0 0; }
             .top-floral     { width: 260px; height: 180px; top: -18px; }
-            .bottom-floral  { width: 160px; height: 160px; bottom: 80px; left: -16px; } /* PUSHED DOWN to clear text */
+            .bottom-floral  { width: 160px; height: 160px; bottom: 60px; left: -16px; } /* PUSHED DOWN to clear text */
             .text-container { padding-top: 13vh; } /* Dynamic padding based on available height */
             .name-text      { font-size: 60px; }
             .ampersand-box  { margin-top: 8px; } /* TIGHTENED */
@@ -891,7 +891,7 @@ function AmbientDust() {
 
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 1.0 }} className="mb-4 space-y-1 cursor-default">
               <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Sugra bai Late Qamruddin bhai Tambawala</motion.h3>
-              <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Hamida ben Huzaifa bhai Tambawala</motion.h3>
+              <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Hamida ben Khuzema bhai Tambawala</motion.h3>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 1.2 }} className="mb-4 cursor-default">
