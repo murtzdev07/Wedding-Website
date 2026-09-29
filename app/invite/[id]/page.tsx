@@ -683,11 +683,11 @@ function AmbientDust() {
       <audio ref={doorSfxRef} src="/door-open.mp3" preload="auto" />
       <AmbientDust/>
 
-      <section className="relative w-full h-[100dvh] flex justify-center shrink-0">
+      <section className="relative w-full h-[svh] flex justify-center shrink-0">
         
         <AnimatePresence>
           {!isOpen && (
-            <div className="absolute bottom-0 flex justify-center w-full max-w-[390px] h-[95dvh] z-10 perspective-[1400px]">
+            <div className="absolute bottom-0 flex justify-center w-full max-w-[390px] h-[95svh] z-10 perspective-[1400px]">
               
               {/* LEFT DOOR */}
               <motion.div
@@ -871,7 +871,7 @@ function AmbientDust() {
           }
         `}} />
 
-        <div className="inner-envelope absolute bottom-0 flex flex-col items-center justify-start w-full max-w-[390px] h-[95dvh] mx-auto z-0 bg-[#EBE3DA] overflow-hidden border-t border-x border-[#C3B3A3]/70 shadow-[0_-10px_40px_rgba(0,0,0,0.06)]">
+        <div className="inner-envelope absolute bottom-0 flex flex-col items-center justify-start w-full max-w-[390px] h-[95svh] mx-auto z-0 bg-[#EBE3DA] overflow-hidden border-t border-x border-[#C3B3A3]/70 shadow-[0_-10px_40px_rgba(0,0,0,0.06)]">
           
           <motion.div animate={{ opacity: isOpen ? 0.04 : 0 }} transition={{ duration: 2, delay: 0.8 }} className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center grayscale">
             <Image src="/top-floral.png" alt="watermark" fill className="object-cover scale-150 opacity-50" />
