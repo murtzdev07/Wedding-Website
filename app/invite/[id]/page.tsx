@@ -812,20 +812,80 @@ function AmbientDust() {
           )}
         </AnimatePresence>
 
-        <div className="absolute bottom-0 flex flex-col items-center justify-start w-full max-w-[390px] h-[95dvh] mx-auto z-0 bg-[#EBE3DA] overflow-hidden rounded-t-[195px] border-t border-x border-[#C3B3A3]/70 shadow-[0_-10px_40px_rgba(0,0,0,0.06)]">
+        {/* ========================================= */}
+        {/* 📱 MANUAL DEVICE CONFIGURATION PANEL      */}
+        {/* Change values below to perfectly fit any phone */}
+        {/* ========================================= */}
+        <style dangerouslySetInnerHTML={{__html: `
+          /* 1. DEFAULT / MEDIUM PHONES (iPhone 14 Pro, 15 Pro, Google Pixel) */
+          /* Approx Screen Width: 390px to 410px */
+          .inner-envelope { border-radius: 195px 195px 0 0; }
+          .top-floral     { width: 320px; height: 220px; top: -25px; }
+          .bottom-floral  { width: 200px; height: 200px; bottom: 20px; left: -12px; }
+          .text-container { padding-top: 128px;  }
+          .name-text      { font-size: 58px; }
+          .ampersand-box  { margin-top: 12px;  }
+          .ampersand      { font-size: 40px;}
+          .sarrah-box     { margin-top: 12px; }
+          .bottom-section { margin-top: 20px; }
+
+          /* 2. SMALL PHONES (Samsung S24, iPhone 12 Mini, 13 Mini) */
+          /* Approx Screen Width: 360px to 375px */
+          @media screen and (max-width: 380px) {
+            .inner-envelope { border-radius: 175px 175px 0 0; }
+            .top-floral     { width: 270px; height: 180px; top: -5px; }
+            .bottom-floral  { width: 180px; height: 180px; bottom: 98px; left: -16px; }
+            .text-container { padding-top: 110px; }
+            .name-text      { font-size: 65px; }
+            .ampersand-box  { margin-top: 25px; }
+            .ampersand      { font-size: 36px; }
+            .sarrah-box     { margin-top: 25px; }
+            .bottom-section { margin-top: 25px; }
+          }
+
+          /* 3. LARGE PHONES (iPhone 14 Pro Max, 15 Pro Max, S24/S27 Ultra) */
+          /* Approx Screen Width: 412px to 430px+ */
+          @media screen and (min-width: 412px) {
+            .inner-envelope { border-radius: 195px 195px 0 0; }
+            .top-floral     { width: 300px; height: 200px; top: -20px; }
+            .bottom-floral  { width: 190px; height: 190px; bottom: 80px; left: -18px; }
+            .text-container { padding-top: 120px; }
+            .name-text      { font-size: 78px; }
+            .ampersand-box  { margin-top: 16px; }
+            .ampersand      { font-size: 48px; }
+            .sarrah-box     { margin-top: 16px; }
+            .bottom-section { margin-top: 25px; }
+        }
+          /* 4. EXTRA LARGE PHONES (iPhone 16 Pro Max, 17/18 Pro Max) */
+          /* Approx Screen Width: 436px+ */
+          @media screen and (min-width: 436px) {
+            .inner-envelope { border-radius: 205px 205px 0 0; }
+            .top-floral     { width: 360px; height: 260px; top: -12px; }
+            .bottom-floral  { width: 240px; height: 240px; bottom: 115px; left: -8px; }
+            .text-container { padding-top: 155px; }
+            .name-text      { font-size: 84px; }
+            .ampersand-box  { margin-top: 24px; }
+            .ampersand      { font-size: 52px; }
+            .sarrah-box     { margin-top: 24px; }
+            .bottom-section { margin-top:170px; }
+          }
+        `}} />
+
+        <div className="inner-envelope absolute bottom-0 flex flex-col items-center justify-start w-full max-w-[390px] h-[95dvh] mx-auto z-0 bg-[#EBE3DA] overflow-hidden border-t border-x border-[#C3B3A3]/70 shadow-[0_-10px_40px_rgba(0,0,0,0.06)]">
+          
           <motion.div animate={{ opacity: isOpen ? 0.04 : 0 }} transition={{ duration: 2, delay: 0.8 }} className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center grayscale">
             <Image src="/top-floral.png" alt="watermark" fill className="object-cover scale-150 opacity-50" />
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: -30 }} animate={isOpen ? { opacity: 0.9, y: [0, -5, 0] } : { opacity: 0, y: -30 }} transition={{ opacity: { duration: 1, delay: 0.6 }, y: { duration: 7, repeat: Infinity, ease: "easeInOut" } }} className="absolute -top-2 left-1/2 -translate-x-1/2 w-[320px] h-[220px] pointer-events-none z-0">
+          <motion.div initial={{ opacity: 0, y: -30 }} animate={isOpen ? { opacity: 0.9, y: [0, -5, 0] } : { opacity: 0, y: -30 }} transition={{ opacity: { duration: 1, delay: 0.6 }, y: { duration: 7, repeat: Infinity, ease: "easeInOut" } }} className="top-floral absolute left-1/2 -translate-x-1/2 pointer-events-none z-0">
             <Image src="/top-floral.png" alt="Inner Top Floral" fill className="object-contain object-top scale-[0.65]" />
           </motion.div>
           
-          <motion.div initial={{ opacity: 0, x: -20, y: 20 }} animate={isOpen ? { opacity: 1, x: 0, y: [0, 4, 0] } : { opacity: 0, x: -20, y: 20 }} transition={{ opacity: { duration: 1, delay: 0.6 }, x: { duration: 1, delay: 0.6 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 } }} className="absolute bottom-24 -left-3 w-[200px] h-[200px] pointer-events-none z-0">
+          <motion.div initial={{ opacity: 0, x: -20, y: 20 }} animate={isOpen ? { opacity: 1, x: 0, y: [0, 4, 0] } : { opacity: 0, x: -20, y: 20 }} transition={{ opacity: { duration: 1, delay: 0.6 }, x: { duration: 1, delay: 0.6 }, y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 } }} className="bottom-floral absolute pointer-events-none z-0">
             <Image src="/inner-bottom-floral.png" alt="Inner Bottom Floral" fill className="object-contain object-left-bottom scale-[0.9] -rotate-[85deg]" />
           </motion.div>
 
-          <div className="relative z-10 flex flex-col items-center justify-start pt-32 text-center px-4 w-full h-full">
+          <div className="text-container relative z-10 flex flex-col items-center justify-start text-center px-4 w-full h-full">
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 0.8 }} className="mb-4 space-y-2 cursor-default group relative z-10">
               <p className="text-[8.5px] text-[#B38B4D] uppercase tracking-[0.25em] leading-relaxed font-sans font-bold transition-colors duration-500 group-hover:text-[#8B3A43]">
                 By The Grace of Almighty Allah & Dua mubarak of
@@ -838,7 +898,7 @@ function AmbientDust() {
 
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 1.0 }} className="mb-4 space-y-1 cursor-default">
               <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Sugra bai Late Qamruddin bhai Tambawala</motion.h3>
-              <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Hamida ben Huzaifa bhai Tambawala</motion.h3>
+              <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Hamida ben Khuzema bhai Tambawala</motion.h3>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 1.2 }} className="mb-4 cursor-default">
@@ -847,21 +907,22 @@ function AmbientDust() {
 
             <motion.div initial={{ opacity: 0, scale: 0.95, filter: "blur(8px)" }} animate={{ opacity: isOpen ? 1 : 0, scale: isOpen ? 1 : 0.95, filter: "blur(0px)" }} transition={{ duration: 1, delay: 1.4, ease: "easeOut" }} className="flex flex-col w-full relative mt-2 mb-2 px-2">
               <motion.div whileHover={{ scale: 1.04, x: 3, textShadow: "0px 4px 12px rgba(156,74,66,0.4)" }} className="w-full flex justify-start pl-2 cursor-pointer transition-shadow duration-300">
-                <h1 className={`${greatVibes.className} text-[72px] text-[#9C4A42] leading-[0.7] drop-shadow-sm`}>Abdeali</h1>
+                <h1 className={`name-text ${greatVibes.className} text-[#9C4A42] leading-[0.7] drop-shadow-sm`}>Abdeali</h1>
               </motion.div>
-              <motion.div animate={{ rotate: [0, 4, -4, 0], scale: [1, 1.05, 1] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="w-full flex justify-center mt-3 -ml-6">
-                <span className={`${greatVibes.className} text-[44px] text-[#657059] leading-[0.7] opacity-80`}>&</span>
+              
+              <motion.div animate={{ rotate: [0, 4, -4, 0], scale: [1, 1.05, 1] }} transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }} className="ampersand-box w-full flex justify-center -ml-6">
+                <span className={`ampersand ${greatVibes.className} text-[#657059] leading-[0.7] opacity-80`}>&</span>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.04, x: -3 }} className="w-full flex flex-col items-end pr-2 mt-3 cursor-pointer group">
-                <motion.h1 whileHover={{ textShadow: "0px 4px 12px rgba(156,74,66,0.4)" }} className={`${greatVibes.className} text-[72px] text-[#9C4A42] leading-[0.7] drop-shadow-sm transition-shadow duration-300`}>Sarrah</motion.h1>
+              
+              <motion.div whileHover={{ scale: 1.04, x: -3 }} className="sarrah-box w-full flex flex-col items-end pr-2 cursor-pointer group">
+                <motion.h1 whileHover={{ textShadow: "0px 4px 12px rgba(156,74,66,0.4)" }} className={`name-text ${greatVibes.className} text-[#9C4A42] leading-[0.7] drop-shadow-sm transition-shadow duration-300`}>Sarrah</motion.h1>
                 <p className="text-[7.5px] text-[#657059] text-right mt-2 font-medium tracking-[0.05em] font-sans pr-4 opacity-80 group-hover:opacity-100 transition-opacity">(D/o Late Tasneem ben &<br/>Late Yusuf bhai Bandookwala)</p>
               </motion.div>
             </motion.div>
 
             {/* BOTTOM SECTION: Niqah Badge + Modern Scroll Hint */}
-            <div className="flex flex-col items-center w-full mt-9 pb-6 z-20 cursor-default">
+            <div className="bottom-section flex flex-col items-center w-full pb-6 z-20 cursor-default">
               
-              {/* Niqah Badge */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }} 
@@ -875,7 +936,6 @@ function AmbientDust() {
                 </div>
               </motion.div>
 
-              {/* Modern Animated Scroll Indicator */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isOpen ? 1 : 0 }}
@@ -887,7 +947,6 @@ function AmbientDust() {
                   Scroll To Explore
                 </span>
                 
-                {/* Luxury Pill/Mouse Icon */}
                 <div className="w-[16px] h-[28px] rounded-full border border-[#B38B4D]/50 flex justify-center p-[2px] group-hover:border-[#8B3A43] transition-colors shadow-[0_4px_10px_rgba(0,0,0,0.05)]">
                   <motion.div 
                     animate={{ y: [0, 12, 0], opacity: [1, 0, 1] }} 
