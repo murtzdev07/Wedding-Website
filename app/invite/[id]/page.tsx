@@ -683,7 +683,7 @@ function AmbientDust() {
       <audio ref={doorSfxRef} src="/door-open.mp3" preload="auto" />
       <AmbientDust/>
 
-      <section className="relative w-full h-[svh] flex justify-center shrink-0">
+      <section className="relative w-full h-[100svh] flex justify-center shrink-0">
         
         <AnimatePresence>
           {!isOpen && (
@@ -698,7 +698,6 @@ function AmbientDust() {
                 style={{ transformOrigin: 'left' }}
                 className="relative w-1/2 h-full bg-[#EBE3DA] rounded-tl-[195px] shadow-[-15px_10px_30px_rgba(0,0,0,0.15)] overflow-hidden z-20 border-r border-[#5A2E2E]/10"
               >
-                {/* Subtle Breathing Animation for Top Floral */}
                 <motion.div 
                   animate={{ scale: [1, 1.02, 1] }} 
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -707,7 +706,6 @@ function AmbientDust() {
                   <Image src="/top-floral.png" alt="Top Flora" fill className="object-contain object-top scale-[0.75]" />
                 </motion.div>
                 
-                {/* Subtle Breathing Animation for Bottom Floral */}
                 <motion.div 
                   animate={{ scale: [1, 1.03, 1] }} 
                   transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -726,7 +724,6 @@ function AmbientDust() {
                 style={{ transformOrigin: 'right' }}
                 className="relative w-1/2 h-full bg-[#EBE3DA] rounded-tr-[195px] shadow-[15px_10px_30px_rgba(0,0,0,0.15)] overflow-hidden z-20"
               >
-                {/* Subtle Breathing Animation for Top Floral */}
                 <motion.div 
                   animate={{ scale: [1, 1.02, 1] }} 
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -735,7 +732,6 @@ function AmbientDust() {
                   <Image src="/top-floral.png" alt="Top Flora" fill className="object-contain object-top scale-[0.75]" />
                 </motion.div>
                 
-                {/* Subtle Breathing Animation for Bottom Floral */}
                 <motion.div 
                   animate={{ scale: [1, 1.03, 1] }} 
                   transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
@@ -745,7 +741,7 @@ function AmbientDust() {
                 </motion.div>
               </motion.div>
 
-              {/* CENTER PILL BADGE - Upgraded with Light Sweep, Audio Trigger, and Surrounding Glow Particles */}
+              {/* CENTER PILL BADGE */}
               <motion.div
                 onClick={handleOpenInvitation}
                 exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
@@ -754,7 +750,6 @@ function AmbientDust() {
                 whileTap={{ scale: 0.98 }}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 cursor-pointer group"
               >
-                {/* Ambient glowing orb behind the badge */}
                 <motion.div 
                   animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.1, 1] }} 
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -763,14 +758,12 @@ function AmbientDust() {
 
                 <div className="relative w-[130px] h-[220px] bg-[#FCFAF8] rounded-[55px] border border-[#B38B4D]/40 shadow-[0_15px_35px_rgba(40,20,20,0.2)] flex flex-col items-center justify-center overflow-hidden">
                   
-                  {/* Continuous Golden Light Sweep */}
                   <motion.div 
                     animate={{ left: ['-100%', '200%'] }} 
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }} 
                     className="absolute top-0 w-[50%] h-full bg-gradient-to-r from-transparent via-white/60 to-transparent -skew-x-[30deg] z-40 pointer-events-none" 
                   />
 
-                  {/* Gentle Floating Animation for Inner Leaf */}
                   <motion.div 
                     animate={{ y: [0, -3, 0] }} 
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -783,7 +776,6 @@ function AmbientDust() {
                     <Image src="/pill-bottom-floral.png" alt="Bottom Floral" fill className="object-contain object-bottom scale-[1.15]" />
                   </div>
                   
-                  {/* Slowly Rotating Curved Text */}
                   <motion.svg 
                     animate={{ rotate: [0, 2, -2, 0] }} 
                     transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -814,7 +806,6 @@ function AmbientDust() {
 
         {/* ========================================= */}
         {/* 📱 MANUAL DEVICE CONFIGURATION PANEL      */}
-        {/* Change values below to perfectly fit any phone */}
         {/* ========================================= */}
         <style dangerouslySetInnerHTML={{__html: `
           /* 1. DEFAULT / MEDIUM PHONES (iPhone 14 Pro, 15 Pro, Google Pixel) */
@@ -833,19 +824,19 @@ function AmbientDust() {
           /* Approx Screen Width: 360px to 375px */
           @media screen and (max-width: 380px) {
             .inner-envelope { border-radius: 175px 175px 0 0; }
-            .top-floral     { width: 270px; height: 180px; top: -5px; }
-            .bottom-floral  { width: 180px; height: 180px; bottom: 98px; left: -16px; }
-            .text-container { padding-top: 110px; }
-            .name-text      { font-size: 65px; }
-            .ampersand-box  { margin-top: 25px; }
+            .top-floral     { width: 260px; height: 180px; top: -5px; }
+            .bottom-floral  { width: 160px; height: 160px; bottom: 50px; left: -16px; } /* PUSHED DOWN to clear text */
+            .text-container { padding-top: 95px; } /* PUSHED UP */
+            .name-text      { font-size: 60px; }
+            .ampersand-box  { margin-top: 8px; } /* TIGHTENED */
             .ampersand      { font-size: 36px; }
-            .sarrah-box     { margin-top: 25px; }
-            .bottom-section { margin-top: 25px; }
+            .sarrah-box     { margin-top: 8px; } /* TIGHTENED */
+            .bottom-section { margin-top: 16px; }
           }
 
           /* 3. LARGE PHONES (iPhone 14 Pro Max, 15 Pro Max, S24/S27 Ultra) */
           /* Approx Screen Width: 412px to 430px+ */
-          @media screen and (min-width: 412px) {
+          @media screen and (min-width: 412px) and (max-width: 435px) {
             .inner-envelope { border-radius: 195px 195px 0 0; }
             .top-floral     { width: 300px; height: 200px; top: -20px; }
             .bottom-floral  { width: 190px; height: 190px; bottom: 80px; left: -18px; }
@@ -855,7 +846,8 @@ function AmbientDust() {
             .ampersand      { font-size: 48px; }
             .sarrah-box     { margin-top: 16px; }
             .bottom-section { margin-top: 25px; }
-        }
+          }
+
           /* 4. EXTRA LARGE PHONES (iPhone 16 Pro Max, 17/18 Pro Max) */
           /* Approx Screen Width: 436px+ */
           @media screen and (min-width: 436px) {
@@ -867,10 +859,11 @@ function AmbientDust() {
             .ampersand-box  { margin-top: 24px; }
             .ampersand      { font-size: 52px; }
             .sarrah-box     { margin-top: 24px; }
-            .bottom-section { margin-top:170px; }
+            .bottom-section { margin-top: 170px; }
           }
         `}} />
 
+        {/* LOCKED VIEWPORT HEIGHT (95svh) TO PREVENT JUMPING */}
         <div className="inner-envelope absolute bottom-0 flex flex-col items-center justify-start w-full max-w-[390px] h-[95svh] mx-auto z-0 bg-[#EBE3DA] overflow-hidden border-t border-x border-[#C3B3A3]/70 shadow-[0_-10px_40px_rgba(0,0,0,0.06)]">
           
           <motion.div animate={{ opacity: isOpen ? 0.04 : 0 }} transition={{ duration: 2, delay: 0.8 }} className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center grayscale">
@@ -898,14 +891,14 @@ function AmbientDust() {
 
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 1.0 }} className="mb-4 space-y-1 cursor-default">
               <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Sugra bai Late Qamruddin bhai Tambawala</motion.h3>
-              <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Hamida ben Khuzema bhai Tambawala</motion.h3>
+              <motion.h3 whileHover={{ scale: 1.05, textShadow: "0px 2px 8px rgba(156,74,66,0.3)" }} className={`${alexBrush.className} text-[22px] text-[#9C4A42] transition-all duration-300`}>Hamida ben Huzaifa bhai Tambawala</motion.h3>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 15, filter: "blur(4px)" }} animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 15, filter: "blur(0px)" }} transition={{ duration: 0.8, delay: 1.2 }} className="mb-4 cursor-default">
               <p className="text-[8px] text-[#68715D] uppercase tracking-[0.2em] leading-loose font-sans">Cordially invite you on the Auspicious Occasion of the<br/>Wedding Ceremony of Our Beloved Son</p>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, scale: 0.95, filter: "blur(8px)" }} animate={{ opacity: isOpen ? 1 : 0, scale: isOpen ? 1 : 0.95, filter: "blur(0px)" }} transition={{ duration: 1, delay: 1.4, ease: "easeOut" }} className="flex flex-col w-full relative mt-2 mb-2 px-2">
+            <motion.div initial={{ opacity: 0, scale: 0.95, filter: "blur(8px)" }} animate={{ opacity: isOpen ? 1 : 0, scale: isOpen ? 1 : 0.95, filter: "blur(0px)" }} transition={{ duration: 1, delay: 1.4, ease: "easeOut" }} className="flex flex-col w-full relative mb-2 px-2">
               <motion.div whileHover={{ scale: 1.04, x: 3, textShadow: "0px 4px 12px rgba(156,74,66,0.4)" }} className="w-full flex justify-start pl-2 cursor-pointer transition-shadow duration-300">
                 <h1 className={`name-text ${greatVibes.className} text-[#9C4A42] leading-[0.7] drop-shadow-sm`}>Abdeali</h1>
               </motion.div>
