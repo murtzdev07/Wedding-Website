@@ -824,9 +824,9 @@ function AmbientDust() {
           /* Approx Screen Width: 360px to 375px */
           @media screen and (max-width: 380px) {
             .inner-envelope { border-radius: 175px 175px 0 0; }
-            .top-floral     { width: 260px; height: 180px; top: -5px; }
-            .bottom-floral  { width: 160px; height: 160px; bottom: 50px; left: -16px; } /* PUSHED DOWN to clear text */
-            .text-container { padding-top: 95px; } /* PUSHED UP */
+            .top-floral     { width: 260px; height: 180px; top: -18px; }
+            .bottom-floral  { width: 160px; height: 160px; bottom: 80px; left: -16px; } /* PUSHED DOWN to clear text */
+            .text-container { padding-top: 13vh; } /* Dynamic padding based on available height */
             .name-text      { font-size: 60px; }
             .ampersand-box  { margin-top: 8px; } /* TIGHTENED */
             .ampersand      { font-size: 36px; }
